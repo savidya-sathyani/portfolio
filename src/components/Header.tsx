@@ -11,6 +11,7 @@ import MenuDark from '../assets/menu-dark.svg';
 import MenuLight from '../assets/menu-light.svg';
 import { useTheme } from "../providers/theme-provider";
 import { useState } from "react";
+import { LINKS } from "../utils/constants";
 
 export default function Header() {
 	const { theme, toggleTheme } = useTheme();
@@ -20,6 +21,10 @@ export default function Header() {
 		console.log("clicked")
 		setOpenMenu(prev => !prev);
 	}
+
+	const openLink = (url: string) => {
+		window.open(url, '_blank');
+	};
 
 	return (
 		<header className="main h-8 flex item-end justify-between sm:h-14">
@@ -35,14 +40,14 @@ export default function Header() {
 				</div>
 			</div>
 			<div className="items-end space-x-0.5 hidden sm:flex">
-				<button className="icon-button item-hover" onClick={toggleTheme}>
+				<button className="icon-button item-hover" onClick={() => openLink(LINKS.github)}>
 					<img src={theme === 'light' ? GithubLight : GithubDark} alt="GitHub" />
 				</button>
-				<button className="icon-button item-hover" onClick={toggleTheme}>
-					<img src={theme === 'light' ? LinkedinLight : LinkedinDark} alt="GitHub" />
+				<button className="icon-button item-hover" onClick={() => openLink(LINKS.linkedIn)}>
+					<img src={theme === 'light' ? LinkedinLight : LinkedinDark} alt="LinkedIn" />
 				</button>
 				<button className="icon-button item-hover" onClick={toggleTheme}>
-					<img src={theme === 'light' ? ThemeLight : ThemeDark} alt="GitHub" />
+					<img src={theme === 'light' ? ThemeLight : ThemeDark} alt="Theme" />
 				</button>
 			</div>
 
@@ -52,16 +57,24 @@ export default function Header() {
 					<img src={theme === 'light' ? MenuLight : MenuDark} alt="Menu" />
 				</button>
 				<button className="icon-button item-hover" onClick={toggleTheme}>
-					<img src={theme === 'light' ? ThemeLight : ThemeDark} alt="GitHub" />
+					<img src={theme === 'light' ? ThemeLight : ThemeDark} alt="Theme" />
 				</button>
 			</div>
 			{/* Dimmed overlay for mobile view */}
-			<div className={`${openMenu ? 'flex' : 'hidden'} justify-center items-center fixed inset-0 bg-blur/10 backdrop-blur-sm z-10 sm:hidden`}onClick={() => setOpenMenu(false)}>
-					<div className="w-4/5 h-2/3 bg-background/50 rounded-2xl flex flex-col justify-center space-y-3 items-center mt-5">
-						<Link to="/" className="nav-link item-hover">Home</Link>
-						<Link to="/" className="nav-link item-hover">Projects</Link>
-						<Link to="/" className="nav-link item-hover">Contact</Link>
+			<div className={`${openMenu ? 'flex' : 'hidden'} justify-center items-center fixed inset-0 bg-blur/10 backdrop-blur-sm z-10 sm:hidden`} onClick={() => setOpenMenu(false)}>
+				<div className="w-4/5 h-2/3 bg-background/50 rounded-2xl flex flex-col justify-center space-y-3 items-center mt-5">
+					<Link to="/" className="nav-link item-hover">Home</Link>
+					<Link to="/" className="nav-link item-hover">Projects</Link>
+					<Link to="/" className="nav-link item-hover">Contact</Link>
+					<div>
+						<button className="icon-button item-hover" onClick={() => openLink(LINKS.github)}>
+							<img src={theme === 'light' ? GithubLight : GithubDark} alt="GitHub" />
+						</button>
+						<button className="icon-button item-hover" onClick={() => openLink(LINKS.linkedIn)}>
+							<img src={theme === 'light' ? LinkedinLight : LinkedinDark} alt="LinkedIn" />
+						</button>
 					</div>
+				</div>
 			</div>
 		</header>
 	);
