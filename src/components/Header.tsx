@@ -17,17 +17,12 @@ export default function Header() {
 	const { theme, toggleTheme } = useTheme();
 	const [openMenu, setOpenMenu] = useState<boolean>(false);
 
-	const handleMenuClick = () => {
-		console.log("clicked")
-		setOpenMenu(prev => !prev);
-	}
-
 	const openLink = (url: string) => {
 		window.open(url, '_blank');
 	};
 
 	return (
-		<header className="main h-8 flex item-end justify-between sm:h-14">
+		<section className="h-8 flex item-end justify-between sm:h-14">
 			<div className="flex justify-between space-x-10">
 				<Link to="/" className="w-32 sm:w-52">
 					<img src={theme === 'light' ? LogoLight : LogoDark} alt="Savidya's Portfolio" title="Savidya's Portfolio" />
@@ -53,7 +48,7 @@ export default function Header() {
 
 			{/* mobile screens */}
 			<div className="flex items-end space-x-0.5 relative sm:hidden">
-				<button className="icon-button item-hover" onClick={handleMenuClick}>
+				<button className="icon-button item-hover" onClick={()=> setOpenMenu(prev => !prev)}>
 					<img src={theme === 'light' ? MenuLight : MenuDark} alt="Menu" />
 				</button>
 				<button className="icon-button item-hover" onClick={toggleTheme}>
@@ -76,6 +71,6 @@ export default function Header() {
 					</div>
 				</div>
 			</div>
-		</header>
+		</section>
 	);
 }

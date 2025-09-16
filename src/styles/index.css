@@ -48,9 +48,6 @@
 }
 
 @layer components {
-  .flex-item-center {
-    @apply flex items-center;
-  }
   .nav-link {
     @apply font-body text-base text-text border-b border-primary/20 pb-2;
     @apply sm:border-none;
@@ -58,12 +55,17 @@
   .nav-link:hover {
     @apply text-primary/50 border-primary/10;
   }
+
   .icon-button {
     @apply w-6 h-6 rounded-full;
     @apply sm:w-8 sm:h-8;
   }
   .icon-button:hover {
     @apply bg-primary/20;
+  }
+
+  .btn-fill {
+    @apply text-background font-body text-sm font-bold bg-primary rounded-3xl px-4 py-2;
   }
 }
 
