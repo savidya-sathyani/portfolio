@@ -3,6 +3,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @import './animations.css';
+@import './specialization.css';
 
 /* Light Mode */
 [data-theme='light'] {
@@ -52,6 +53,12 @@
   .animate-hero-pulse {
     animation: hero-pulse 4s ease-in-out infinite;
   }
+  .sub-heading {
+    @apply font-heading font-medium text-xl md:text-2xl lg:text-3xl tracking-widest mb-2;
+  }
+  .paragraph-text {
+    @apply font-thin tracking-3 text-sm md:text-base;
+  }
 }
 
 @layer components {
@@ -84,20 +91,17 @@
     @apply text-text bg-background border-[1px] border-primary;
   }
 
-  .main {
-    @apply container h-150 md:h-200 lg:h-180 w-screen flex flex-col max-w-[1024px] mx-auto mt-4 px-5 md:px-12 lg:px-20;
+  .header {
+    @apply container w-screen flex flex-col max-w-[1024px] mx-auto mt-4 px-5 md:px-12 lg:px-20;
   }
   .hero-section {
-    @apply flex-1 grid grid-cols-3 gap-1 mt-12 md:mt-14 lg:mt-0;
+    @apply flex-1 grid grid-cols-3 gap-1 mt-12 md:mt-14 lg:mt-36;
   }
   .hero-section-text {
-    @apply col-span-3 lg:col-span-2 flex flex-col justify-center font-body  items-center lg:items-start text-center lg:text-left text-sm lg:text-base;
+    @apply col-span-3 lg:col-span-2 flex flex-col justify-center font-body  items-center lg:items-start text-center lg:text-left;
   }
   .hero-section-h1 {
     @apply font-heading font-bold leading-none text-6xl/28 md:text-8xl/22 lg:text-9xl/28;
-  }
-  .hero-section-p {
-    @apply font-thin tracking-3;
   }
   .hero-section-animation {
     @apply col-span-3 lg:col-span-1 mt-20 lg:mt-0 flex flex-col justify-center items-center;
