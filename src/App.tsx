@@ -7,7 +7,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-        <header className="main h-screen flex flex-col">
+        <header className="main">
           <Header />
           <Hero />
         </header>

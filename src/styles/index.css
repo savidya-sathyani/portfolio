@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+@import './animations.css';
+
 /* Light Mode */
 [data-theme='light'] {
   --background: 255, 255, 255;
@@ -34,16 +36,6 @@
   --tracking-4: 0.1rem;
 }
 
-@keyframes hero-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.07);
-  }
-}
-
 @layer base {
   body {
     @apply m-0 p-0 bg-background text-text;
@@ -51,9 +43,6 @@
 }
 
 @layer utilities {
-  .main {
-    @apply container max-w-[1024px] mx-auto px-2 mt-2;
-  }
   .item-hover {
     @apply transition duration-300 ease-in-out;
   }
@@ -95,6 +84,31 @@
     @apply text-text bg-background border-[1px] border-primary;
   }
 
+  .main {
+    @apply container h-150 md:h-200 w-screen flex flex-col max-w-[1024px] mx-auto mt-4 px-5 md:px-12;
+  }
+  .hero-section {
+    @apply flex-1 grid grid-cols-3 gap-1 mt-12 md:mt-14;
+  }
+  .hero-section-text {
+    @apply col-span-3 flex flex-col justify-center font-body lg:col-span-2 items-center lg:items-start text-center lg:text-left text-sm lg:text-xl;
+  }
+  .hero-section-h1 {
+    @apply font-heading font-bold leading-none text-6xl/28 md:text-8xl/22 lg:text-9xl/28;
+  }
+  .hero-section-p {
+    @apply font-thin tracking-3;
+  }
+  .hero-section-animation {
+    @apply col-span-3 mt-20 flex flex-col justify-center items-center lg:col-span-1 lg:mt-0;
+  }
+  .hero-section-animation-container {
+    /* @apply relative flex items-center justify-center w-[220px] h-[220px] sm:w-[370px] sm:h-[370px]; */
+    @apply relative flex items-center justify-center w-[250px] h-[250px] md:w-[300px] md:h-[300px];
+  }
+  .hero-image {
+    @apply rounded-full object-cover object-center z-0;
+  }
   .hero-circle {
     @apply absolute rounded-full border-2 border-primary/40 dark:border-primary/20;
   }
