@@ -5,7 +5,7 @@ import Button from './Button';
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div className="hero-section-text">
+      <div className="hero-section-text z-30">
         <p className="hero-section-p flex space-y-1  ">
           Hey, I'm Savidya
           <span>
@@ -25,12 +25,12 @@ export default function Hero() {
         </div>
       </div>
       <div className="hero-section-animation">
-        <div className="hero-section-animation-container group">
+        <div className="hero-section-animation-container group lg:ml-36">
           {/* 3 Concentric Circles with Primary Border and Hover Effect */}
           <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="hero-circle w-[290px] h-[290px] md:w-[340px] md:h-[340px] animate-hero-pulse delay-1000"></div>
-            <div className="hero-circle  w-[330px] h-[330px] md:w-[370px] md:h-[370px] animate-hero-pulse delay-2000"></div>
-            <div className="hero-circle w-[370px] h-[370px] md:w-[410px] md:h-[410px] animate-hero-pulse delay-3000"></div>
+            <div className="hero-circle w-[290px] h-[290px] md:w-[340px] md:h-[340px] lg:w-[390px] lg:h-[390px] animate-hero-pulse delay-1000"></div>
+            <div className="hero-circle  w-[330px] h-[330px] md:w-[370px] md:h-[370px] lg:w-[430px] lg:h-[430px] animate-hero-pulse delay-2000"></div>
+            <div className="hero-circle w-[370px] h-[370px] md:w-[410px] md:h-[410px] lg:w-[470px] lg:h-[470px] animate-hero-pulse delay-3000"></div>
           </div>
           {/* Centered blurred circle behind hero image, color adapts to theme */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none">
