@@ -72,7 +72,7 @@
   }
 
   .btn {
-    @apply font-body text-sm lg:text-lg tracking-4 font-semibold rounded-3xl px-4 py-2 transition duration-200 ease-in-out;
+    @apply font-body text-sm tracking-4 font-semibold rounded-3xl px-4 py-2 lg:px-5 lg:py-3 transition duration-200 ease-in-out;
   }
   .btn:hover {
     @apply shadow-md scale-105 shadow-text/20;
@@ -91,7 +91,7 @@
     @apply flex-1 grid grid-cols-3 gap-1 mt-12 md:mt-14 lg:mt-0;
   }
   .hero-section-text {
-    @apply col-span-3 lg:col-span-2 flex flex-col justify-center font-body  items-center lg:items-start text-center lg:text-left text-sm lg:text-lg;
+    @apply col-span-3 lg:col-span-2 flex flex-col justify-center font-body  items-center lg:items-start text-center lg:text-left text-sm lg:text-base;
   }
   .hero-section-h1 {
     @apply font-heading font-bold leading-none text-6xl/28 md:text-8xl/22 lg:text-9xl/28;
@@ -103,7 +103,7 @@
     @apply col-span-3 lg:col-span-1 mt-20 lg:mt-0 flex flex-col justify-center items-center;
   }
   .hero-section-animation-container {
-    @apply relative flex items-center justify-center w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px];
+    @apply relative flex items-center justify-center w-[250px] h-[250px] md:w-[300px] md:h-[300px] lg:w-[320px] lg:h-[320px];
   }
   .hero-image {
     @apply rounded-full object-cover object-center z-0;

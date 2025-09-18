@@ -84,7 +84,7 @@ export default function Header() {
       <div
         className={`${
           openMenu ? 'flex' : 'hidden'
-        } justify-center items-center fixed inset-0 bg-blur/10 backdrop-blur-sm z-10 sm:hidden`}
+        } justify-center items-center fixed inset-0 bg-blur/5 backdrop-blur-lg z-50 sm:hidden`}
         onClick={() => setOpenMenu(false)}
       >
         <div className="w-4/5 h-2/3 bg-background/50 rounded-2xl flex flex-col justify-center space-y-3 items-center mt-5">
